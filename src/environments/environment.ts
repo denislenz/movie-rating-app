@@ -2,8 +2,15 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-export const environment = {
-  production: false
+export const ENV = {
+  production: false,
+  rapidapi: {
+    url: "https://imdb-internet-movie-database-unofficial.p.rapidapi.com/",
+    headers: {
+      'x-rapidapi-key': '12174c9f44msh6fbc38f944bd77ep18fc41jsn921766bda0a8',
+      'x-rapidapi-host': 'imdb-internet-movie-database-unofficial.p.rapidapi.com'
+    }
+  }
 };
 
 /*

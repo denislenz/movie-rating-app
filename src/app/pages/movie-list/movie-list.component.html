@@ -1,0 +1,9 @@
+<div class="search">
+  <strong class="search__label">Pesquisar: </strong>
+  <input class="search__query-string" type="text" [formControl]="queryStringControl" />
+</div>
+
+<h4 class="loading" *ngIf="isLoading">Carregando...</h4>
+
+<app-movie-list-item *ngFor="let title of titles; trackBy:trackById" (click)="openTitle(title.id)" class="list__item"
+  [id]="title.id" [title]="title.title" [image]="title.image"></app-movie-list-item>

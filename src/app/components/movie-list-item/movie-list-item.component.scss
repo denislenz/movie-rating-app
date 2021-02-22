@@ -1,0 +1,28 @@
+:host {
+  display: flex;
+  padding: 12px;
+  background: linear-gradient(293deg, #f2f2f2, #dddddd);
+  border-radius: 16px;
+  border: 2px solid #6396e7;
+
+  &:hover {
+    box-shadow: 0 0 4px #96aeff;
+  }
+
+  .item__poster {
+    margin: auto;
+    height: 20vh;
+    max-width: 28vh;
+    object-fit: cover;
+    box-shadow: 0 0 18px -10px #3d3d3d;
+  }
+  .item__title {
+    font-size: 24px;
+    margin-left: 30px;
+    margin-right: 30px;
+    align-self: center;
+    font-family: sans-serif;
+    color: #505050;
+    line-break: anywhere;
+  }
+}

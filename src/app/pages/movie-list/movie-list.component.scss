@@ -1,0 +1,45 @@
+:host {
+  display: block;
+  flex-direction: column;
+  width: max-content;
+  max-width: 50vw;
+  min-width: 300px;
+  margin: auto;
+
+  .search {
+    margin-top: 48px;
+    margin-bottom: 48px;
+    text-align: center;
+    .search__label {
+      font-family: sans-serif;
+      margin-right: 8px;
+      color: #2f2f2f;
+    }
+    .search__query-string {
+      &:active,
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 4px #96aeff;
+      }
+      margin: auto;
+      padding: 8px;
+      border-radius: 16px;
+      border: 2px solid #6396e7;
+    }
+  }
+
+  .loading {
+    text-align: center;
+    font-family: sans-serif;
+    color: #2f2f2f;
+  }
+
+  .list__item {
+    display: flex;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    @media only screen and (max-width: 600px) {
+      flex-direction: column;
+    }
+  }
+}

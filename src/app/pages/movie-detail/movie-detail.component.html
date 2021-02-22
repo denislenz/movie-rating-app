@@ -1,0 +1,51 @@
+<div class="movie-detail">
+
+  <div *ngIf="movie?.trailer?.link" class="trailer">
+    <video controls>
+      <source [src]="movie.trailer.link">
+    </video>
+  </div>
+
+  <div *ngIf="movie" class="detail">
+    <img class="detail__poster" [src]="movie.poster" />
+    <div class="detail__info">
+      <div class="detail__info-header">
+        <h1 class="detail__title">{{ movie.title }}</h1>
+        <strong *ngIf="movie.rating" class="detail__rating">Nota: {{ movie.rating + ' (' + (movie.rating_votes || 0) + '
+          votos)' }}</strong>
+      </div>
+      <div>
+        <strong *ngIf="movie.year" class="detail__year" title="Lançamento">{{ movie.year }}</strong>
+        <strong *ngIf="movie.length" class="detail__length" title="Duração">{{ movie.length }}</strong>
+      </div>
+      <p *ngIf="movie.plot" class="detail__plot"><strong>Descrição: </strong>{{ movie.plot }}</p>
+
+      <p *ngIf="movie.cast?.length" class="detail__cast"><strong>Elenco: </strong>
+        <ng-container *ngFor="let cast of movie.cast">{{ cast.actor + ' (' + cast.character +
+          '); '}}</ng-container>
+      </p>
+
+      <!-- poderia gerar essa parte de rating com um ngFor caso eu tivesse a lista de labels mapeadas em algum lugar (por exemplo em i18n) -->
+      <div class="rating">
+        <strong class="rating__label">Roteiro: </strong>
+        <app-movie-ratings [rate]="ratings[RATING.Roteiro]" (rageChange)="changeRate(RATING.Roteiro, $event)">
+        </app-movie-ratings>
+      </div>
+      <div class="rating">
+        <strong class="rating__label">Fotografia: </strong>
+        <app-movie-ratings [rate]="ratings[RATING.Fotografia]" (rageChange)="changeRate(RATING.Fotografia, $event)">
+        </app-movie-ratings>
+      </div>
+      <div class="rating">
+        <strong class="rating__label">Efeitos especiais: </strong>
+        <app-movie-ratings [rate]="ratings[RATING.EfeitosEspeciais]"
+          (rageChange)="changeRate(RATING.EfeitosEspeciais, $event)"></app-movie-ratings>
+      </div>
+      <div class="rating">
+        <strong class="rating__label">Elenco: </strong>
+        <app-movie-ratings [rate]="ratings[RATING.Elenco]" (rageChange)="changeRate(RATING.Elenco, $event)">
+        </app-movie-ratings>
+      </div>
+    </div>
+  </div>
+</div>

@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "movie-rating-app"
+    }
+  },
+  "defaultProject": "movie-rating-app",
+  "cli": {
+    "analytics": "c4843114-39d2-429d-90c2-b5d4bd178e02"
+  }
 }

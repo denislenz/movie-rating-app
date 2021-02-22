@@ -1,0 +1,101 @@
+:host {
+  display: block;
+  flex-direction: column;
+  width: max-content;
+  max-width: 65vw;
+  min-width: 300px;
+  margin: auto;
+
+  .movie-detail {
+    margin-top: 12px;
+    margin-bottom: 12px;
+
+    .trailer {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 12px;
+      flex-direction: column;
+      video {
+        height: 330px;
+      }
+    }
+    .detail {
+      display: flex;
+      padding: 12px;
+      background: linear-gradient(293deg, #f2f2f2, #dddddd);
+      border-radius: 16px;
+      border: 2px solid #6396e7;
+      font-family: sans-serif;
+      color: #2f2f2f;
+
+      .detail__poster {
+        height: 50vh;
+        object-fit: cover;
+        box-shadow: 0 0 18px -10px #3d3d3d;
+      }
+
+      .detail__info {
+        padding: 24px;
+
+        .detail__info-header {
+          display: flex;
+          justify-content: space-between;
+          .detail__rating {
+            align-self: center;
+          }
+        }
+
+        .detail__year {
+          white-space: nowrap;
+          line-height: 2.5;
+          padding: 8px;
+          margin-right: 8px;
+          color: white;
+          background-color: #6396e7;
+          border-radius: 8px;
+        }
+
+        .detail__length {
+          white-space: nowrap;
+          line-height: 2.5;
+          padding: 8px;
+          color: white;
+          background-color: #6396e7;
+          border-radius: 8px;
+        }
+        .detail__plot,
+        .detail__cast,
+        .rating {
+          margin-top: 24px;
+        }
+
+        .rating {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          .rating__label {
+            margin-right: 12px;
+          }
+        }
+      }
+    }
+
+    @media only screen and (max-width: 1024px) {
+      .detail {
+        flex-direction: column;
+
+        .detail__info-header {
+          flex-direction: column;
+          text-align: center;
+          margin-bottom: 24px;
+        }
+        .rating {
+          flex-direction: column;
+          .rating__label {
+            margin-bottom: 12px;
+          }
+        }
+      }
+    }
+  }
+}
